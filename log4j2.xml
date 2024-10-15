@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <File name="file" fileName="D:\\LocalApps\\workspace\\Report_Generation_Tool\\src\\report_job.log" filePattern="D:\\LocalApps\\workspace\\Report_Generation_Tool\\src\\$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </File>
+        <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="file" />
+        </Root>
+    </Loggers>
+</Configuration>
